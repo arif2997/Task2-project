@@ -1,4 +1,4 @@
-Login to your self-hosted server.
+Login to your self-hosted server.(VM)
 Install gitlab-runner (Gitlab official site has the procedure)
 Give the proper permission to "gitlab-runner" binary
 gitlab-runner start
