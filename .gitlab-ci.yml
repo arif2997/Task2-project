@@ -1,0 +1,13 @@
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  before-script:
+    -   sudo yum install -y yum-utils
+    -   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    -   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+    -   sudo systemctl start docker
+    -   sudo git clone git clone https://github.com/arif2997/konvator-interview-project.git
+  script:
+    - tar -zxvf konvator-interview-project/task-1-knovator.tar.gz
+    - docker compose up
